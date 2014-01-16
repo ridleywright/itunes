@@ -1,7 +1,7 @@
 Itunes class
 ==============
 
-Class used for storing json data information from Itunes API into PHP
+Grabs info from the itunes store, using an id provided by the user and returns as an array
 
 Ex: 
 $itunes = new Itunes(655589424);
