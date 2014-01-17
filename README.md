@@ -1,12 +1,25 @@
-Itunes class
+iTunes API Client
 ==============
 
-Grabs info from the itunes store, using an id provided by the user and returns as an array
+## Description 
+This simple class-based API client, when given an app ID, makes a simple query
+to Apple(TM) iTunes'(TM) and returns the info it got from Apple(TM).<br/>
 
-Ex: 
-$itunes = new Itunes(655589424);
-print $itunes->output_to_html();
+## Usage
 
-GNU License
+A good example of this script's usage is as follows:
 
-This file is to be used for good, not evil
+	<?php
+		$myawesomeapp = new itunes(123456);
+		
+		$mydata = $myawesomeapp->get_data();
+
+	?>
+
+You will be returned either a <b>FALSE</b> boolean if something went wrong
+or an array with all your data, using Apple's(TM) native slug syntax.
+
+## License 
+
+This script is licensed under the GPL V3 License. It may not be used for evil, only good!
+
