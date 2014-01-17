@@ -1,6 +1,6 @@
 <?php
 	
-	class Itunes {
+	class itunes {
 		
 		private $id;
 		private $data;
