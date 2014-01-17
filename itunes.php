@@ -8,7 +8,10 @@
 		
 		public function __construct( $id ){
 			$this->id 	= $id;
-			$this->data = self::grab_data( $id );
+			if( $this->data = self::grab_data( $id ) ){
+				self::$ready = true;
+
+			}
 		}
 		
 		public function get_id(){
@@ -22,18 +25,17 @@
 		private static function grab_data( $id ){	
 			try{
 				if( !$data = file_get_contents( 'http://itunes.apple.com/lookup?id=' . $id ) ){
-					throw new Exception('Could not open stream');
+					throw new Exception('There was an error downloading from Apple\'s servers!');
 				}
 				
 				if( !$data = json_decode( $data, true ) ){
-					throw new Exception('JSON in not valid');		
+					throw new Exception('The response we got from Apple is invalid');		
 				}
 				
 				if( !isset( $data['results'][0] ) ){
-					throw new Exception('Result was not found');	
+					throw new Exception('Could not find app id ' . $id);	
 				}
 				
-				self::$ready = true;
 				return $data['results'][0];
 					
 			} catch( Exception $e ){
