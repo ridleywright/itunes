@@ -21,5 +21,5 @@ or an array with all your data, using Apple's(TM) native slug syntax.
 
 ## License 
 
-This script is licensed under the GPL V3 License. It may not be used for evil, only good!
+This script is licensed under the GPL V2 License. It may not be used for evil, only good!
 
