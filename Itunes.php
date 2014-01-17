@@ -9,16 +9,14 @@
 		public function __construct( $id ){
 			$this->id 	= $id;
 			$this->data = self::grab_data( $id );
-			
-			return (self::$ready)  ? $this->id : false;
 		}
 		
 		public function get_id(){
-			return $this->id;
+			return (self::$ready)  ? $this->id : false;
 		}
 		
 		public function get_data(){
-			return $this->data;
+			return (self::$ready)  ? $this->data : false;
 		}
 		
 		private static function grab_data( $id ){	
